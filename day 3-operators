@@ -1,0 +1,103 @@
+8-1-2025
+Wednusday
+
+JavaScript  operators
+
+1.Arthimetic operators
+Ex +,-,%,/,*
+ let a=10
+        let b=5
+        document.write(a>b && a<b,'<br>')
+        document.write(a>b || a<b,'<br>')
+        document.write(!(a<b),'<br>')
+
+        document.write((a+b),'<br>')
+        document.write((a*b),'<br>')
+        document.write((a/b),'<br>')
+        document.write((a%b),'<br>')
+        document.write((a-b),'<br>')
+        document.write((a**b),'<br>')
+        a++
+        b--
+        document.write(a,' ',b)
+b-=30
+        document.write(b,'<br>')
+Out put:
+False
+True
+True
+15
+50
+2
+0
+5
+100000
+11 4
+-25
+2.Assignment operators:
+Ex:=
+1.+=
+2.-=
+3./=
+4.%=
+
+
+3.Logical operators
+	Ex:
+1.And -&&
+2.OR-||
+3.NOT-!
+
+4.Relational operators
+1. ==
+	2. !=
+	3. <=
+	4. >=
+	5. ===
+	6. !==
+	7. <,>
+
+let c=50
+        let d=30
+        document.write(c==d,'<br>')
+        document.write(c===d,'<br>')
+        document.write(c!=d,'<br>')
+        document.write(c>=d,'<br>')
+        document.write(c<=d,'<br>')
+
+Out put:
+false
+false
+true
+true
+false
+
+
+5 . Ternary operator:
+  Condition operator
+  It first evaluates an expression for a true or false
+Syntax:
+Condition?e1:e2
+Ex:
+let t=40
+        let r=(t>40)? "Ac-off":"Ac-on"
+        document.write(r)
+Output: 
+Ac-on
+
+
+Windows:
+Alert():
+alert("hi chintu")
+        cosole.log(alert)
+        document.write(alert)
+
+promt():
+let aa=prompt()
+        let bb=prompt()
+        console.log(type(aa))
+        document.write(type(aa))
+        console.log(type(bb))
+        document.write(type(bb))
+
+confirm() 
