@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function greet(name){
+        //     document.write("Good morning ",name);
+        // }
+        // let name=prompt('EMNTER YOUR NAME');
+        // greet(name);
+        // function add(a,b){
+        //     document.write(a+b);
+        // }
+        // let a=parseFloat(prompt("Enter the 1st number"));
+        // let b=parseFloat(prompt("Enter the 2nd number"));
+        // add(a,b);
+        // sum= function(a,b){
+        //     let r=a+b;
+        //     return r;
+        // }
+        // document.write(sum(5,9));
+        // function prime(a){
+        //     if(a%2==0 && a%1==0){
+        //         document.write('the given number is prime number');
+        //     }
+        //     else{
+        //         document.write(a+'is not a prime number');
+        //     }
+            
+        // }
+        // let a=parseInt(prompt("enter the number"));
+        // prime(a);
+        // // Function to check if a number is prime
+    function isPrime(num) {
+        // Prime numbers are greater than 1
+        if (num <= 1) {
+            return false;
+        }
+
+    // Check for factors other than 1 and itself
+        for (let i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i === 0) {
+                return false; // Found a factor, not a prime
+            }
+        }
+
+        return true; // No factors found, it's a prime number
+    }
+
+// Example usage
+    const number = 29;
+    if (isPrime(number)) {
+        console.log(`${number} is a prime number.`);
+    } else {
+        console.log(`${number} is not a prime number.`);
+    }
+
+    </script>
+</body>
+</html>
