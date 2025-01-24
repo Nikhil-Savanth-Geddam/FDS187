@@ -1,0 +1,206 @@
+code:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function greet(name){
+        //     document.write("Good morning ",name);
+        // }
+        // let name=prompt('EMNTER YOUR NAME');
+        // greet(name);
+        // function add(a,b){
+        //     document.write(a+b);
+        // }
+        // let a=parseFloat(prompt("Enter the 1st number"));
+        // let b=parseFloat(prompt("Enter the 2nd number"));
+        // add(a,b);
+        // sum= function(a,b){
+        //     let r=a+b;
+        //     return r;
+        // }
+        // document.write(sum(5,9));
+        // function prime(a){
+        //     if(a%2==0 && a%1==0){
+        //         document.write('the given number is prime number');
+        //     }
+        //     else{
+        //         document.write(a+'is not a prime number');
+        //     }
+            
+        // }
+        // let a=parseInt(prompt("enter the number"));
+        // prime(a);
+        // // Function to check if a number is prime
+//     function isPrime(num) {
+//         // Prime numbers are greater than 1
+//         if (num <= 1) {
+//             return false;
+//         }
+
+//     // Check for factors other than 1 and itself
+//         for (let i = 2; i <= Math.sqrt(num); i++) {
+//             if (num % i === 0) {
+//                 return false; // Found a factor, not a prime
+//             }
+//         }
+
+//         return true; // No factors found, it's a prime number
+//     }
+
+// // Example usage
+//     const number = 29;
+//     if (isPrime(number)) {
+//         console.log(`${number} is a prime number.`);
+//     } else {
+//         console.log(`${number} is not a prime number.`);
+//     }
+        // let C=()=>{
+        //     console.log("hi venkky");
+        //     document.write("hi venkky");
+        // }
+        // C();
+        // let X=(a,b)=>{
+        //     document.write(a+b);
+        // }
+        // let a=parseInt(prompt("Enter number1"));
+        // let b=parseInt(prompt("Enter number2"));
+        // X(a,b);
+        // let age=18;
+        // let welcome=(age<18)?
+        // ()=>document.write("hi"):
+        // ()=>document.write("hello");
+        // welcome()
+        // function task1(){
+        //     document.write("task1:start",'<br>');
+        // }
+        // function task2(){
+        //     document.write("task2:start",'<br>');
+        // }
+        // function task3(){
+        //     document.write("task3:start");
+        // }
+        // task1();
+        // task2();
+        // task3();
+        // console.log("hi Nikhil");
+        // setTimeout(() => {
+        //     console.log("I am waiting");
+        // }, 5000);
+        // console.log("I am in Lab");
+        // console.log("I am in collage");
+        function greet(name,callback){
+            console.log(`Hello,${name}!`);
+            callback();
+        }
+        function sayGoodbye(){
+            console.log("Goodbye");
+        }
+        greet("sam",sayGoodbye);
+
+    </script>
+</body>
+</html>
+theory Notes:
+Arrow Functions:
+--Es6 version
+--more readble and more structured
+--annonymous functions(lamda functions)
+--without function name but they are assigned to a variable
+Example:
+Arrow function without parameters
+Let C=()=>{
+Console.log(“hi venkky”);
+}
+C();
+        let C=()=>{
+            console.log("hi venkky");
+            document.write("hi venkky");
+        }
+        C();
+Output:
+hi venkky
+
+        let X=(a,b)=>{
+            document.write(a+b);
+        }
+        let a=parseInt(prompt("Enter number1"));
+        let b=parseInt(prompt("Enter number2"));
+        X(a,b);
+
+Output:
+40
+Arrow function with one parameter and paranthesis
+Let greet=x=>document.write(x);
+Greet(x);
+
+Let greet=()=>document.write(“Hello”);
+Greet();
+
+Arrow function as an expression
+Syntax:
+(condition)?
+Ex:
+Let age=18;
+Let welcome=(age<18)?
+()=>document.write(“hi”);
+()=>document.write(“hello”);
+Welcome()
+        let age=18;
+        let welcome=(age<18)?
+        ()=>document.write("hi"):
+        ()=>document.write("hello");
+        welcome()
+Output:
+hello
+Synchronous funtion :
+Where multiple functions are executed sequecely one after another
+Ex:
+        function task1(){
+            document.write("task1:start",'<br>');
+        }
+        function task2(){
+            document.write("task2:start",'<br>');
+        }
+        function task3(){
+            document.write("task3:start");
+        }
+        task1();
+        task2();
+        task3();
+Output:
+task1:start
+task2:start
+task3:start
+
+Asnchronous funtion:
+It can execute multiple functions at a time
+Ex:       console.log("hi Nikhil");
+        setTimeout(() => {
+            console.log("I am waiting");
+        }, 5000);
+        console.log("I am in Lab");
+        console.log("I am in collage");
+Output:
+hi Nikhil
+Functions.html:93 I am in Lab
+Functions.html:94 I am in collage
+Functions.html:91 I am waiting
+
+Call Back functions:
+        function greet(name,callback){
+            console.log(`Hello,${name}!`);
+            callback();
+        }
+        function sayGoodbye(){
+            console.log("Goodbye");
+        }
+        greet("sam",sayGoodbye);
+
+Output:
+Hello,sam!
+Functions.html:100 Goodbye
