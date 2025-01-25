@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function greet(name){
+        //     document.write("Good morning ",name);
+        // }
+        // let name=prompt('EMNTER YOUR NAME');
+        // greet(name);
+        // function add(a,b){
+        //     document.write(a+b);
+        // }
+        // let a=parseFloat(prompt("Enter the 1st number"));
+        // let b=parseFloat(prompt("Enter the 2nd number"));
+        // add(a,b);
+        // sum= function(a,b){
+        //     let r=a+b;
+        //     return r;
+        // }
+        // document.write(sum(5,9));
+        // function prime(a){
+        //     if(a%2==0 && a%1==0){
+        //         document.write('the given number is prime number');
+        //     }
+        //     else{
+        //         document.write(a+'is not a prime number');
+        //     }
+            
+        // }
+        // let a=parseInt(prompt("enter the number"));
+        // prime(a);
+        // // Function to check if a number is prime
+//     function isPrime(num) {
+//         // Prime numbers are greater than 1
+//         if (num <= 1) {
+//             return false;
+//         }
+
+//     // Check for factors other than 1 and itself
+//         for (let i = 2; i <= Math.sqrt(num); i++) {
+//             if (num % i === 0) {
+//                 return false; // Found a factor, not a prime
+//             }
+//         }
+
+//         return true; // No factors found, it's a prime number
+//     }
+
+// // Example usage
+//     const number = 29;
+//     if (isPrime(number)) {
+//         console.log(`${number} is a prime number.`);
+//     } else {
+//         console.log(`${number} is not a prime number.`);
+//     }
+        // let C=()=>{
+        //     console.log("hi venkky");
+        //     document.write("hi venkky");
+        // }
+        // C();
+        // let X=(a,b)=>{
+        //     document.write(a+b);
+        // }
+        // let a=parseInt(prompt("Enter number1"));
+        // let b=parseInt(prompt("Enter number2"));
+        // X(a,b);
+        // let age=18;
+        // let welcome=(age<18)?
+        // ()=>document.write("hi"):
+        // ()=>document.write("hello");
+        // welcome()
+        // function task1(){
+        //     document.write("task1:start",'<br>');
+        // }
+        // function task2(){
+        //     document.write("task2:start",'<br>');
+        // }
+        // function task3(){
+        //     document.write("task3:start");
+        // }
+        // task1();
+        // task2();
+        // task3();
+        // console.log("hi Nikhil");
+        // setTimeout(() => {
+        //     console.log("I am waiting");
+        // }, 5000);
+        // console.log("I am in Lab");
+        // console.log("I am in collage");
+        // function greet(name,callback){
+        //     console.log(`Hello,${name}!`);
+        //     callback();
+        // }
+        // function sayGoodbye(){
+        //     console.log("Goodbye");
+        // }
+        // greet("sam",sayGoodbye);
+        // function mainFunction(callback){
+        //     console.log("Executing main Function");
+        //     callback();
+        // }
+        // function callbackFunction(){
+        //     console.log("callback function executed");
+        // }
+        // mainFunction(callbackFunction);
+        // function mainFunction(callback){
+        //     console.log("Hello");
+        //     callback();
+        // }
+        // let C=()=>{
+        //     console.log("i am Nikhil");
+        // }
+        // mainFunction(C());
+        // function greet(name,callback){
+        //     console.log(`Hello,${name}!`);
+        //     callback();
+        // }
+        // // let C=()=>{
+        // //     console.log("i am Nikhil");
+        // // }
+        // greet("sam",function(){
+        //     console.log("i am Nikhil");
+        // }); 
+        function fetchData(callback){
+            console.log("fetch data");
+        
+            setTimeout(()=>{
+                console.log("Hello sir Data fetched");
+                callback();
+ 
+            },2000);
+        }
+        function processData(){
+            console.log("processing the fetched data....");
+        }    
+        fetchData(processData);
+
+
+    </script>
+</body>
+</html>
+Call Back functions:
+You can pass the callback function as an argument to another function 
+Execution: the function receiving the callback will execute the callback at some point during its executions(often at the end or after an asychronous operation is done)
+Example:
+        function mainFunction(callback){
+            console.log("Executing main Function");
+            callback();
+        }
+        function callbackFunction(){
+            console.log("callback function executed");
+        }
+        mainFunction(callbackFunction);
+Output:
+Executing main Function
+callback function executed
+Explanation
+Mainfunction takes the callback as parameter callbackFunction is passed to mainFunction inside the mainFunction,the callfunction function is call with callback()
+Passing a Named function as a callback:
+        function greet(name,callback){
+            console.log(`Hello,${name}!`);
+            callback();
+        }
+        function sayGoodbye(){
+            console.log("Goodbye");
+        }
+        greet("sam",sayGoodbye);
+
+Output:
+Hello,sam!
+Goodbye
+
+Using a anonymous function as callback:
+        function greet(name,callback){
+            console.log(`Hello,${name}!`);
+            callback();
+        }
+        // let C=()=>{
+        //     console.log("i am Nikhil");
+        // }
+        greet("sam",function(){
+            console.log("i am Nikhil");
+        }); 
+OUTPUT:
+Hello,sam!
+i am Nikhil
+Asychronous callback with set timeout:
+        function fetchData(callback){
+            console.log("fetch data");
+        
+            setTimeout(()=>{
+                console.log("Hello sir Data fetched");
+                callback();
+ 
+            },2000);
+        }
+        function processData(){
+            console.log("processing the fetched data....");
+        }    
+        fetchData(processData);
+
+
+Out put:
+
+fetch data
+Functions.html:133 Hello sir Data fetched
+Functions.html:139 processing the fetched data....
