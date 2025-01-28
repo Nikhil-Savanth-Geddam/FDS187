@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .a{
+        color: blue;
+    }
+    .b{
+        color: yellow;
+    }
+    .c{
+        color: red;
+    }
+</style>
+<body>
+    <h1 class="a" id="1">Nikhil</h1>
+    <h1 class="b" id="2">Venkat</h1>
+    <h2 class="a" id="3">Akhil</h1>
+    <h1 class="b" id="4">Vinay</h1>
+
+<script>
+    let x=document.getElementById('2');
+    console.log(x);
+    // let x=document.getElementsByClassName('a');
+    // console.log(x);
+    // let x=document.getElementsByTagName('h1');
+    // console.log(x);
+    // for(let i=0;i<x.length;i++){
+    //     console.log(x[i]);
+    // }
+</script>
+</body>
+</html>
+note:
+
+DOM(Document Object Model):
+- It is a programming  interface in web development that allows us to interact and manipulate(change) the html documents
+- when the webpage is loaded , the browser creates the DOM of the webpage
+- When an html file is loaded into the browser ,the java script cannot understand the html document directly
+
+DOM: is basically the representation of same html document but in the form of a tree like structure composed of objects
+HTML dom it allows javascript to access(to get) and modify all the elements in the html document
+
+Keypoints:
+1)Structure: the DOM represents the structure of html document as tree; each node in a tree represents the element, an attribute, text
+2)Manipulation: using js,you can interact with elements(buttons,h,p)we can modify,add,remove elements,change styles;
+3)Event Handling:
+4)W3C- World wode web Cosortium
+<html>
+<head>
+<title></title>
+</head>
+</body>
+</html>
+
+--in dom all the html  elements are defined objects 
+Property: is a value that you can set to the objects(like changing of an html element)
+Method: an action
+(
+1)Getting an element by id:
+<h1 class="a" id="1">Nikhil</h1>
+    <h1 class="b" id="2">Venkat</h1>
+    <h2 class="a" id="3">Akhil</h1>
+    <h1 class="b" id="4">Vinay</h1>
+   
+ let x=document.getElementById('2');
+    console.log(x);
+<h1 class="b" id="2">Venkat</h1>
+2)Getting an element by class:
+-- returns all the elements having the same classname
+-- return in the form of html collection object
+<h1 class="a" id="1">Nikhil</h1>
+    <h1 class="b" id="2">Venkat</h1>
+    <h2 class="a" id="3">Akhil</h1>
+    <h1 class="b" id="4">Vinay</h1>
+    let x=document.getElementsByClassName('a');
+    console.log(x);
+.
+HTMLCollection(2) [h1#1.a, h2#3.a]
+.0: h1#1.a
+.1: h2#3.a
+.3: <value unavailable>
+.length: 2
+.[[Prototype]]: HTMLCollection
+
+3)Getting an element by tag-name:
+<h1 class="a" id="1">Nikhil</h1>
+    <h1 class="b" id="2">Venkat</h1>
+    <h2 class="a" id="3">Akhil</h1>
+    <h1 class="b" id="4">Vinay</h1>
+
+let x=document.getElementsByTagName('h1');
+    console.log(x);
+    for(let i=0;i<x.length;i++){
+        console.log(x[i]);
+    }
+DOM.html:31 HTMLCollection(3) [h1#1.a, h1#2.b, h1#4.b]0: h1#1.a1: h1#2.b2: h1#4.b4: <value unavailable>length: 3[[Prototype]]: HTMLCollection
+DOM.html:33 <h1 class=​"a" id=​"1">​Nikhil​</h1>​
+DOM.html:33 <h1 class=​"b" id=​"2">​Venkat​</h1>​
+DOM.html:33 <h1 class=​"b" id=​"4">​Vinay​</h1>​
+4)Getying an element by query selector
