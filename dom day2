@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .a{
+        color: blue;
+    }
+    .b{
+        color: yellow;
+    }
+    .c{
+        color: red;
+    }
+</style>
+<body>
+    <h1 class="a" id="1">Nikhil</h1>
+    <h1 class="b" id="2">Venkat</h1>
+    <h2 class="a" id="3">Akhil</h1>
+    <h1 class="b" id="4">Vinay</h1>
+
+<script>
+    // let x=document.getElementById('2');
+    // console.log(x);
+    // let x=document.getElementsByClassName('a');
+    // console.log(x);
+    // let x=document.getElementsByTagName('h1');
+    // console.log(x);
+    // let x=document.querySelectorAll('h1');
+    // console.log(x);
+    
+    // for(let i=0;i<x.length;i++){
+    //     console.log(x[i]);
+    // }
+    // let t=document.createElement("h2")
+    // t.className="tt"
+    // t.textContent="I am from hyd"
+    // console.log(t)
+    // document.body.appendChild(t);
+    const t=['Nikhil','Savanth','venkata']
+    for(let i=0;i<t.length;i++){
+        let tt=document.createElement('h2')
+        tt.className="aa"
+        tt.textContent=t[i];
+        // console.log(t[i]);
+        // console.log(t);
+        document.body.appendChild(tt);
+        console.log(tt);
+    }
+</script>
+</body>
+</html>
+  note:
+  1)Getting an element by id:
+<h1 class="a" id="1">Nikhil</h1>
+    <h1 class="b" id="2">Venkat</h1>
+    <h2 class="a" id="3">Akhil</h1>
+    <h1 class="b" id="4">Vinay</h1>
+   
+ let x=document.getElementById('2');
+    console.log(x);
+<h1 class="b" id="2">Venkat</h1>
+2)Getting an element by class:
+-- returns all the elements having the same classname
+GetElementbyClassName():-method returns an html collection object
+-- return in the form of html collection object
+An html collection is array like list of html elements.
+Length property provides the size of the collection
+<h1 class="a" id="1">Nikhil</h1>
+    <h1 class="b" id="2">Venkat</h1>
+    <h2 class="a" id="3">Akhil</h1>
+<h1 class="b" id="4">Vinay</h1>
+<script>
+
+    let x=document.getElementsByClassName('a');
+console.log(x);
+for(let i=0;i<x.length;i++){
+        console.log(x[i]);
+    }
+
+HTMLCollection(2)0: h1#1.a1: h2#3.a3: <value unavailable>length: 2[[Prototype]]: HTMLCollection
+DOM.html:33 <h1 class=​"a" id=​"1">​Nikhil​</h1>​
+DOM.html:33 <h2 class=​"a" id=​"3">​Akhil​</h2>​
+DOM.html:64 Live reload enabled.
+
+HTMLCollection(2) [h1#1.a, h2#3.a]0: h1#1.a 1: h2#3.a 3: <value unavailable>length: 2[[Prototype]]: HTMLCollection
+
+3)Getting an element by tag-name:
+getElementbyTagName()-this method is used to get the element by tag name 
+<h1 class="a" id="1">Nikhil</h1>
+    <h1 class="b" id="2">Venkat</h1>
+    <h2 class="a" id="3">Akhil</h1>
+    <h1 class="b" id="4">Vinay</h1>
+
+let x=document.getElementsByTagName('h1');
+    console.log(x);
+    for(let i=0;i<x.length;i++){
+        console.log(x[i]);
+    }
+DOM.html:31 HTMLCollection(3) [h1#1.a, h1#2.b, h1#4.b]0: h1#1.a1: h1#2.b2: h1#4.b4: <value unavailable>length: 3[[Prototype]]: HTMLCollection
+DOM.html:33 <h1 class=​"a" id=​"1">​Nikhil​</h1>​
+DOM.html:33 <h1 class=​"b" id=​"2">​Venkat​</h1>​
+DOM.html:33 <h1 class=​"b" id=​"4">​Vinay​</h1>​
+4)Getying an element by query selector
+ queryselector: it is used to selelect html element by its classname,tagname; it only selects the first matching element
+
+    let x=document.querySelector('h1');
+    console.log(x);
+    
+
+
+ qyeryselector All:
+It will return all the match elements
+    let x=document.querySelectorAll('h1');
+    console.log(x);
+    
+
+NodeList(3) [h1#1.a, h1#2.b, h1#4.b]
+DOM.html:36 h1#1.a
+DOM.html:36 h1#2.b
+DOM.html:36 h1#4.b
+Manipulate Elements:
+To create a html element:
+--createElement()
+--document.createElement()
+---this method takes an html element tag name as string parameter
+    let t=document.createElement("h2")
+    t.className="tt"
+    t.textContent="I am from hyd"
+    console.log(t)
+    document.body.appendChild(t);
+
+Output:
+I am from hyd
+To create multiple elements:
+const t=['Nikhil','Savanth','venkata']
+    for(let i=0;i<t.length;i++){
+        let tt=document.createElement('h2')
+        tt.className="aa"
+        tt.textContent=t[i];
+        // console.log(t[i]);
+        // console.log(t);
+        document.body.appendChild(tt);
+        console.log(tt);
+    }
+Output:
+Nikhil
+Savanth
+venkata
+Let title
+For(let I=0;I<3;I++){
+Title=document.createElement(‘h1’)
+Title,className=’t’
+Title.textContent=I
+Console.log(title)
+}
