@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="a">
+        <h1>Nikhil</h1>
+        <h2>Venkat</h2>
+    </div>
+    <div id="b">
+        <h3>Puru</h3>
+    </div>
+    <script>
+        let n=document.createElement("h1")
+        console.log(n)
+        
+    </script>
+</body>
+</html>
+    <h1>remove childnode</h1>
+
+    <ul>
+    <li>ganesh</li>
+    <li>ravi</li>
+    <li>sam</li>
+    </ul>
+    
+<script>
+    const ul=document.querySelector("ul")
+    const lists=document.querySelectorAll("li")
+    console.log(ul)
+    console.log(lists)
+
+    for(const list of lists){
+        console.log(`remove:${list.textContent}`)
+        ul.removeChild(list)
+        /*  console.log(lists)*/
+        console.log(list)
+    } 
+notes:
+
+How to remove child elements from parent node 
+removeChild() - to remove the elements
+
+
+Ex:
+<h1></h1>
+<h2></h2>
+<ul>
+<li>ganesh</li>
+<li>ravi</li>
+<li>sam</li>
+</ul>
+<script>
+Const ul=document.queryselector(‘ul’)
+Const lists=document.queryselectorAll(‘ul’)
+Console.log(ul)
