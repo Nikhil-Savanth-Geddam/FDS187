@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="a">
+        <h1 id="d">Ravi</h1>
+        <h1 id="c">Ram</h1>
+        
+    </div>
+    <div id="b">
+        <h2>sam</h2>
+        <h2>venkat</h2>
+
+    </div>
+    <script>
+//         let n=document.createElement('h1')
+//         n.textContent="chiru"
+
+//         let p=document.getElementById('a')
+//         let l=document.getElementById('c')
+// // to insert ganesh before ravi
+//         let nn=document.createElement('h1')
+//         nn.textContent="ganesh"
+//         let pp=document.getElementById('a')
+//         let ll=document.getElementById('t')
+//         pp.insertBefore(nn,ll)
+//         p.insertBefore(n,l)
+//         let b=document.getElementById('a')
+//         b.remove()
+//         let c=document.getElementById('b')
+//        c.remove()
+        let n=document.createElement('h1')
+        n.textContent="Mallareddy University"
+        let p=document.getElementById('a')
+        p.replaceChildren(n)
+        let a=document.getElementById('d')
+        console.log(a)
+        p.removeChild(a)
+
+    </script>
+</body>
+</html>
+notes:
+Dom Methods:
+1)CreateElement (single,Multiple)
+2)appenChild() #parent at the end
+3)insertBefore(): insert a new node before an existing node as child node of a specified parent
+-- reqires reference to bothe the new node and the existing node you want to insert before:
+
+Remove element:
+Let b= document.getElementById(‘a’)
+b.remove()
+        let n=document.createElement('h1')
+        n.textContent="chiru"
+
+        let p=document.getElementById('a')
+        let l=document.getElementById('c')
+// to insert ganesh before ravi
+        let nn=document.createElement('h1')
+        nn.textContent="ganesh"
+        let pp=document.getElementById('a')
+        let ll=document.getElementById('t')
+        pp.insertBefore(nn,ll)
+        p.insertBefore(n,l)
+        let b=document.getElementById('a')
+        b.remove()
+        let c=document.getElementById('b')
+       c.remove()
+
+
+        let p=document.getElementById('a')
+        let a=document.getElementById('d')
+        console.log(a)
+        p.removeChild(a)
+Output:
+Ram
+sam
+venkat
