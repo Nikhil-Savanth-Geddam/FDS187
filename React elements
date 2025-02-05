@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <!-- <div id="root"></div>
+    <script src="a.js"></script> -->
+    
+    <!-- <div id="app">
+        <script type="text/babel">
+            const n=10;
+            const m=<h1>Hello</h1>
+            const e=document.getElementById('app');
+            const root=ReactDOM.createRoot(e);
+            root.render(m)
+        </script>
+    </div> -->
+
+    <!-- <div id="a">
+        <script>
+            const b=React.createElement('h1',{id:'c'},"I am ravi")
+            const e=document.getElementById("a")
+            const root=ReactDOM.createRoot(e)
+            root.render(b);
+
+        </script> -->
+
+        <!-- <div id="a">
+            <script type="text/babel">
+                const n=5
+                const m=<h1>React is{n+5} times bettrt than jsx</h1>
+                const e=document.getElementById('a');
+                const root=ReactDOM.createRoot(e)
+                root.render(m)
+            </script>
+        </div> -->
+        <div id="a"></div>
+            <script type="text/babel">
+                function getGreeting(name){
+                    return `hello,${name}! welcome user`
+                }
+                function Greeting(){
+                    const name="Nikhil";
+                    return <h1>{getGreeting(name)}</h1>
+                }
+                //calling the function in a function
+                //create a root and render the greeting component
+                const root=ReactDOM.createRoot(document.getElementById('a'))
+                root.render(<Greeting/>)
+
+            </script>
+        
+        <!-- <div id="a">
+            <script type="text/babel">
+                const App=()=>{
+                    const isloggedIn=true;
+                    return(
+                    <div>
+                        {isloggedIn?(<h1>Welcome back,user</h1>):(<h1>please login</h1>)()}
+                        {isloggedIn &&<h1>you have a new notification</h1>}
+                        </div>
+                    )
+                }
+                        const root=ReactDOM.createRoot(document.getElementById("a"));
+                        root.render(<App/>)
+                    
+                
+            </script>
+        </div> -->
+
+    <!-- </div> -->
+</body>
+</html>
