@@ -1,0 +1,173 @@
+// App.js
+import React from "react";
+import { ListProvider } from "./components/ListContext";
+import AddItem from "./components/AddItem";
+import ItemList from "./components/ItemList";
+import "./components/styles.css"; // Import the CSS file
+
+const App = () => {
+  return (
+    <ListProvider>
+      <div className="container">
+        <h2>Item Management App</h2>
+        <AddItem />
+        <ItemList />
+      </div>
+    </ListProvider>
+  );
+};
+
+export default App;
+// AddItem.js
+import React, { useState, useContext } from "react";
+import ListContext from "./ListContext";
+
+const AddItem = () => {
+  const [input, setInput] = useState("");
+  const { dispatch } = useContext(ListContext);
+
+  const handleAdd = () => {
+    if (input.trim()) {
+      dispatch({ type: "ADD_ITEM", payload: input });
+      setInput("");
+    }
+  };
+
+  return (
+    <div>
+      <input
+        type="text"
+        value={input}
+        onChange={(e) => setInput(e.target.value)}
+        placeholder="Enter item"
+      />
+      <button onClick={handleAdd}>Add Item</button>
+    </div>
+  );
+};
+
+export default AddItem;
+// ItemList.js
+import React, { useContext, useMemo } from "react";
+import ListContext from "./ListContext";
+
+const ItemList = () => {
+  const { list, dispatch } = useContext(ListContext);
+
+  const memoizedList = useMemo(() => list, [list]);
+
+  return (
+    <div>
+      <h3>Item List ({memoizedList.length})</h3>
+      <ul>
+        {memoizedList.map((item) => (
+          <li key={item.id}>
+            {item.text}{" "}
+            <button onClick={() => dispatch({ type: "REMOVE_ITEM", payload: item.id })}>
+              Remove
+            </button>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+export default ItemList;
+// ListContext.js
+import React, { createContext, useReducer } from "react";
+
+const ListContext = createContext();
+
+const listReducer = (state, action) => {
+  switch (action.type) {
+    case "ADD_ITEM":
+      return [...state, { id: Date.now(), text: action.payload }];
+    case "REMOVE_ITEM":
+      return state.filter((item) => item.id !== action.payload);
+    default:
+      return state;
+  }
+};
+
+export const ListProvider = ({ children }) => {
+  const [list, dispatch] = useReducer(listReducer, []);
+
+  return (
+    <ListContext.Provider value={{ list, dispatch }}>
+      {children}
+    </ListContext.Provider>
+  );
+};
+
+export default ListContext;
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+  }
+  
+  .container {
+    text-align: center;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 350px;
+  }
+  
+  h2 {
+    color: #333;
+  }
+  
+  input {
+    padding: 8px;
+    width: 80%;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  button {
+    padding: 8px 12px;
+    border: none;
+    background-color: #28a745;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  button:hover {
+    background-color: #218838;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    background: #ddd;
+    margin: 5px 0;
+    padding: 8px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  li button {
+    background-color: #dc3545;
+    padding: 5px 10px;
+  }
+  
+  li button:hover {
+    background-color: #c82333;
+  }
+  
