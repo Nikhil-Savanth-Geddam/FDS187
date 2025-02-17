@@ -1,0 +1,120 @@
+Event handling  in react :
+Onclick
+Keydown
+Etc…….
+
+How to use the events in react :
+Use camelCase for event names.
+Pass a function 
+function App(){
+  const handleClick=()=>{
+    alert("Button Clicked")
+  }
+  return(
+    <button onClick={handleClick}>Click Me</button>
+  )
+}
+export default App;
+
+import React,{useState} from "react";
+function App(){
+  const [text,setText]=useState("")
+  const handleChange=(event)=>{
+    setText(event.target.value)
+  }
+  return(
+    <div>
+      <input type="text" value={text} onChange={handleChange}/>
+      <p>Your Text:{text}</p>
+    </div>
+  )
+}
+export default App;
+
+App.js
+import React, { useState } from "react";
+import "./App.css";
+
+function App() {
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
+    <div className="container">
+      <button
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        className="button"
+      >
+        Hover Me
+      </button>
+
+      {/* Fullscreen Image - Always there, but invisible until hovered */}
+      <div className={`fullscreen-image ${isHovered ? "visible" : ""}`}>
+        <img src="/dodo.png" alt="dodo" />
+      </div>
+    </div>
+  );
+}
+export default App;
+
+App.css
+/* Center content */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+  position: relative;
+  z-index: 1;
+}
+
+/* Button styling */
+.button {
+  padding: 12px 24px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  outline: none;
+  position: relative;
+  z-index: 2; /* Ensures button is always above the image */
+}
+
+/* Button hover effect */
+.button:hover {
+  transform: scale(1.05);
+}
+
+/* Fullscreen Image (Initially hidden) */
+.fullscreen-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7); /* Dark background overlay */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease-in-out, visibility 0.4s;
+}
+
+/* Image inside fullscreen container */
+.fullscreen-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures image fills the screen */
+}
+
+/* Show image when button is hovered */
+.fullscreen-image.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
